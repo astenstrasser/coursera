@@ -14,12 +14,16 @@ class Matrix:
 
     def matrix_sum(self, m2):
         sum_m1_m2 = []
-        try:
+        if len(m2) == len(self.data):
             for i in range(len(self.data)):
                 line = []
-                for j in range(len(self.data[0])):
-                    line.append(self.data[i][j] + m2[i][j])
-                sum_m1_m2.append(line)
+                if len(m2[i]) == len(self.data[i]):
+                    for j in range(len(self.data[0])):
+                        line.append(self.data[i][j] + m2[i][j])
+                    sum_m1_m2.append(line)
+                else:
+                    return False
             return sum_m1_m2
-        except:
+        else:
             return False
+        
