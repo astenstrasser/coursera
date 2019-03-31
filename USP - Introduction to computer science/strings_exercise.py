@@ -20,9 +20,9 @@ class ListOfStrings:
         return first
 
     def upper_letters(self):
-        upper_letters = '' 
+        upper_letters = ''
         sentence = self.sentence
-        sentence = sentence.replace(' ','')
+        sentence = sentence.replace(' ', '')
         size = len(sentence)
         for letter in sentence:
             if ord(letter) >= 65 and ord(letter) <= 90:
