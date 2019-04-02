@@ -17,14 +17,14 @@ class TestSortingMethods:
         return nearly_sorted_numbers
 
     @pytest.fixture
-    def buble_sorting_method(self):
-        buble_sorting_method = SortingMethod('buble')
-        return buble_sorting_method
+    def bubble_sorting_method(self):
+        bubble_sorting_method = SortingMethod('bubble')
+        return bubble_sorting_method
 
     @pytest.fixture
-    def improved_buble_sorting_method(self):
-        improved_buble_sorting_method = SortingMethod('improved buble')
-        return improved_buble_sorting_method
+    def improved_bubble_sorting_method(self):
+        improved_bubble_sorting_method = SortingMethod('improved bubble')
+        return improved_bubble_sorting_method
 
     @pytest.fixture
     def selection_sorting_method(self):
@@ -59,29 +59,29 @@ class TestSortingMethods:
         sorted_list = selection_sorting_method.sort(nearly_sorted_numbers)
         assert self.is_sorted(sorted_list)
 
-    def test_buble_sort(self, buble_sorting_method):
+    def test_bubble_sort(self, bubble_sorting_method):
         non_sorted = [6, 5, 4, 3, 9, 1]
-        assert buble_sorting_method.sort(non_sorted) == [1, 3, 4, 5, 6, 9]
+        assert bubble_sorting_method.sort(non_sorted) == [1, 3, 4, 5, 6, 9]
 
-    def test_buble_sort_aleatory(self, buble_sorting_method, aleatory_numbers):
-        sorted_list = buble_sorting_method.sort(aleatory_numbers)
+    def test_bubble_sort_aleatory(self, bubble_sorting_method, aleatory_numbers):
+        sorted_list = bubble_sorting_method.sort(aleatory_numbers)
         assert self.is_sorted(sorted_list)
 
-    def test_buble_sort_nearly_sorted(self, buble_sorting_method, nearly_sorted_numbers):
-        sorted_list = buble_sorting_method.sort(nearly_sorted_numbers)
+    def test_bubble_sort_nearly_sorted(self, bubble_sorting_method, nearly_sorted_numbers):
+        sorted_list = bubble_sorting_method.sort(nearly_sorted_numbers)
         assert self.is_sorted(sorted_list)
 
-    def test_improved_buble_sort(self, improved_buble_sorting_method):
+    def test_improved_bubble_sort(self, improved_bubble_sorting_method):
         non_sorted = [6, 5, 4, 3, 9, 1]
-        assert improved_buble_sorting_method.sort(non_sorted) == [
+        assert improved_bubble_sorting_method.sort(non_sorted) == [
             1, 3, 4, 5, 6, 9]
 
-    def test_improved_buble_sort_aleatory(self, improved_buble_sorting_method, aleatory_numbers):
-        sorted_list = improved_buble_sorting_method.sort(aleatory_numbers)
+    def test_improved_bubble_sort_aleatory(self, improved_bubble_sorting_method, aleatory_numbers):
+        sorted_list = improved_bubble_sorting_method.sort(aleatory_numbers)
         assert self.is_sorted(sorted_list)
 
-    def test_improved_buble_sort_nearly_sorted(self, improved_buble_sorting_method, nearly_sorted_numbers):
-        sorted_list = improved_buble_sorting_method.sort(nearly_sorted_numbers)
+    def test_improved_bubble_sort_nearly_sorted(self, improved_bubble_sorting_method, nearly_sorted_numbers):
+        sorted_list = improved_bubble_sorting_method.sort(nearly_sorted_numbers)
         assert self.is_sorted(sorted_list)
 
 
@@ -93,16 +93,16 @@ class TestTimeTracker:
         return aleatory_numbers
 
     @pytest.fixture
-    def buble_sorting_method(self):
-        buble_sorting_method = SortingMethod('buble')
-        return buble_sorting_method
+    def bubble_sorting_method(self):
+        bubble_sorting_method = SortingMethod('bubble')
+        return bubble_sorting_method
 
     @pytest.fixture
     def time_tracker(self):
         time_tracker = TimeTracker()
         return time_tracker
 
-    def test_track_buble_sort(self, time_tracker, buble_sorting_method, aleatory_numbers):
-        time_passed = time_tracker.track_time_sort(buble_sorting_method, aleatory_numbers)
+    def test_track_bubble_sort(self, time_tracker, bubble_sorting_method, aleatory_numbers):
+        time_passed = time_tracker.track_time_sort(bubble_sorting_method, aleatory_numbers)
         assert type(time_passed) == float and time_passed > 0
         
