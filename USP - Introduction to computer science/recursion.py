@@ -20,7 +20,7 @@ def find_odds(list_of_elements, position = 0, odds = None):
         return find_odds(list_of_elements, position+1, odds)
     
 def incomodam(times, time_check=0, my_string=''):
-    if time_check < 0:
+    if times < 0:
         return ''
     elif time_check == times:
         return my_string
@@ -29,12 +29,12 @@ def incomodam(times, time_check=0, my_string=''):
         return incomodam(times, time_check+1, my_string)
 
 def elefantes(times, time_check=0, my_string=''):
-    if time_check < 0:
+    if times < 0:
         return ''
     elif time_check == times:
         return my_string
     elif time_check == 0:
-        my_string += str(time_check+1)+ ' elefante incomoda muita gente'
+        my_string += str(time_check+1) + ' elefante incomoda muita gente'
         return elefantes(times, time_check+1, my_string)   
     else:
         add_words = incomodam(time_check+1)

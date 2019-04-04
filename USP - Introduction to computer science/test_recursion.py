@@ -37,7 +37,8 @@ class TestIncomodam:
 
     test_incomodam_inputs = [(1, 'incomodam '),
                              (0, ''),
-                             (3, 'incomodam incomodam incomodam ')]
+                             (3, 'incomodam incomodam incomodam '),
+                             (-1, '')]
 
     @pytest.mark.parametrize('times, expected_output', test_incomodam_inputs)
     def test_incomodam(self, times, expected_output):
@@ -64,4 +65,9 @@ class TestElefantes:
     def test_elefantes_one(self):
         times = 1
         expected_output = '1 elefante incomoda muita gente' 
+        assert elefantes(times) == expected_output
+
+    def test_elefantes_negative(self):
+        times = -3
+        expected_output = ''   
         assert elefantes(times) == expected_output
